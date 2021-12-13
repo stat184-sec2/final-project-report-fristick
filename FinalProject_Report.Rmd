@@ -64,7 +64,6 @@ summary(Salaries)
 
 ### Data Wrangling / Cleaning
 
-
 ```{r}
  NLWinsLonger <-
     NLWinsandLosses %>%
@@ -86,6 +85,13 @@ HighestWinsbyYear <-
   filter(Year >= 1985 & Year != 'Year') %>%
   summarise(MostWins = max(Wins), Team)
   
-  
 HighestWinsbyYear
 ```
+```{r}
+head(Salaries)
+```
+
+
+### Data Visualization
+
+
