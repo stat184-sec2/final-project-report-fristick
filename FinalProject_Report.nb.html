@@ -224,13 +224,48 @@ pre code {
 <h3>Clean up environment and load packages</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBjbGVhbiB1cCB0aGUgUlN0dWRpbyBlbnZpcm9ubWVudCBcbnJtKGxpc3QgPSBscygpKVxuXG4jIGxvYWQgYWxsIHBhY2thZ2VzIGhlcmU6IFxubGlicmFyeShtb3NhaWMpXG5saWJyYXJ5KHRpZHlyKVxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBjbGVhbiB1cCB0aGUgUlN0dWRpbyBlbnZpcm9ubWVudCBcbnJtKGxpc3QgPSBscygpKVxuXG4jIGxvYWQgYWxsIHBhY2thZ2VzIGhlcmU6IFxubGlicmFyeShtb3NhaWMpXG5gYGAifQ== -->
 <pre class="r"><code># clean up the RStudio environment 
 rm(list = ls())
 
 # load all packages here: 
-library(mosaic)
-library(tidyr)</code></pre>
+library(mosaic)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUmVnaXN0ZXJlZCBTMyBtZXRob2Qgb3ZlcndyaXR0ZW4gYnkgJ2h0bWx3aWRnZXRzJzpcbiAgbWV0aG9kICAgICAgICAgICBmcm9tICAgICAgICAgXG4gIHByaW50Lmh0bWx3aWRnZXQgdG9vbHM6cnN0dWRpb1xuUmVnaXN0ZXJlZCBTMyBtZXRob2Qgb3ZlcndyaXR0ZW4gYnkgJ21vc2FpYyc6XG4gIG1ldGhvZCAgICAgICAgICAgICAgICAgICAgICAgICAgIGZyb20gICBcbiAgZm9ydGlmeS5TcGF0aWFsUG9seWdvbnNEYXRhRnJhbWUgZ2dwbG90MlxuXG5UaGUgJ21vc2FpYycgcGFja2FnZSBtYXNrcyBzZXZlcmFsIGZ1bmN0aW9ucyBmcm9tIGNvcmUgcGFja2FnZXMgaW4gb3JkZXIgdG8gYWRkIFxuYWRkaXRpb25hbCBmZWF0dXJlcy4gIFRoZSBvcmlnaW5hbCBiZWhhdmlvciBvZiB0aGVzZSBmdW5jdGlvbnMgc2hvdWxkIG5vdCBiZSBhZmZlY3RlZCBieSB0aGlzLlxuXG5BdHRhY2hpbmcgcGFja2FnZTog4oCYbW9zYWlj4oCZXG5cblRoZSBmb2xsb3dpbmcgb2JqZWN0cyBhcmUgbWFza2VkIGZyb20g4oCYcGFja2FnZTpkcGx5cuKAmTpcblxuICAgIGNvdW50LCBkbywgdGFsbHlcblxuVGhlIGZvbGxvd2luZyBvYmplY3QgaXMgbWFza2VkIGZyb20g4oCYcGFja2FnZTpNYXRyaXjigJk6XG5cbiAgICBtZWFuXG5cblRoZSBmb2xsb3dpbmcgb2JqZWN0IGlzIG1hc2tlZCBmcm9tIOKAmHBhY2thZ2U6Z2dwbG90MuKAmTpcblxuICAgIHN0YXRcblxuVGhlIGZvbGxvd2luZyBvYmplY3RzIGFyZSBtYXNrZWQgZnJvbSDigJhwYWNrYWdlOnN0YXRz4oCZOlxuXG4gICAgYmlub20udGVzdCwgY29yLCBjb3IudGVzdCwgY292LCBmaXZlbnVtLCBJUVIsIG1lZGlhbiwgcHJvcC50ZXN0LCBxdWFudGlsZSwgc2QsIHQudGVzdCwgdmFyXG5cblRoZSBmb2xsb3dpbmcgb2JqZWN0cyBhcmUgbWFza2VkIGZyb20g4oCYcGFja2FnZTpiYXNl4oCZOlxuXG4gICAgbWF4LCBtZWFuLCBtaW4sIHByb2QsIHJhbmdlLCBzYW1wbGUsIHN1bVxuIn0= -->
+<pre><code>Registered S3 method overwritten by &#39;htmlwidgets&#39;:
+  method           from         
+  print.htmlwidget tools:rstudio
+Registered S3 method overwritten by &#39;mosaic&#39;:
+  method                           from   
+  fortify.SpatialPolygonsDataFrame ggplot2
+
+The &#39;mosaic&#39; package masks several functions from core packages in order to add 
+additional features.  The original behavior of these functions should not be affected by this.
+
+Attaching package: ‘mosaic’
+
+The following objects are masked from ‘package:dplyr’:
+
+    count, do, tally
+
+The following object is masked from ‘package:Matrix’:
+
+    mean
+
+The following object is masked from ‘package:ggplot2’:
+
+    stat
+
+The following objects are masked from ‘package:stats’:
+
+    binom.test, cor, cor.test, cov, fivenum, IQR, median, prop.test, quantile, sd, t.test, var
+
+The following objects are masked from ‘package:base’:
+
+    max, mean, min, prod, range, sample, sum</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5cilcbmBgYCJ9 -->
+<pre class="r"><code>library(tidyr)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiXG5BdHRhY2hpbmcgcGFja2FnZTog4oCYdGlkeXLigJlcblxuVGhlIGZvbGxvd2luZyBvYmplY3RzIGFyZSBtYXNrZWQgZnJvbSDigJhwYWNrYWdlOk1hdHJpeOKAmTpcblxuICAgIGV4cGFuZCwgcGFjaywgdW5wYWNrXG4ifQ== -->
 <pre><code>
@@ -240,11 +275,15 @@ The following objects are masked from ‘package:Matrix’:
 
     expand, pack, unpack</code></pre>
 <!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShydmVzdClcblxuYGBgIn0= -->
+<pre class="r"><code>library(rvest)
+</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="loading-the-data" class="section level3">
-<h3>Loading the Data</h3>
+<div id="data-access" class="section level3">
+<h3>Data Access</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU2FsYXJpZXMgPC0gcmVhZHI6OnJlYWRfY3N2KCdDOlxcXFxVc2Vyc1xcXFxmcmlzdFxcXFxPbmVEcml2ZVxcXFxEb2N1bWVudHNcXFxcUGVubiBTdGF0ZVxcXFxTVEFUIDE4NFxcXFxHaXRodWIgUmVwb3NpdG9yeVxcXFxmaW5hbC1wcm9qZWN0LXJlcG9ydC1mcmlzdGlja1xcXFxzYWxhcnkuY3N2JylcbmBgYCJ9 -->
@@ -264,9 +303,8 @@ i Specify the column types or set `show_col_types = FALSE` to quiet this message
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShydmVzdClcbndlYl9wYWdlIDwtIFwiaHR0cHM6Ly93d3cuYmFzZWJhbGwtcmVmZXJlbmNlLmNvbS9sZWFndWVzL05MLyN0ZWFtc190ZWFtX3dpbnMzMDAwXCJcblNldE9mVGFibGVzIDwtIHdlYl9wYWdlICU+JVxuICByZWFkX2h0bWwoKSAlPiVcbiAgaHRtbF9ub2Rlcyhjc3MgPSBcInRhYmxlXCIpICU+JVxuICBodG1sX3RhYmxlKGZpbGwgPSBUUlVFKVxuXG5OTFdpbnNhbmRMb3NzZXMgPC0gU2V0T2ZUYWJsZXNbWzFdXVxuYGBgIn0= -->
-<pre class="r"><code>library(rvest)
-web_page &lt;- &quot;https://www.baseball-reference.com/leagues/NL/#teams_team_wins3000&quot;
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud2ViX3BhZ2UgPC0gXCJodHRwczovL3d3dy5iYXNlYmFsbC1yZWZlcmVuY2UuY29tL2xlYWd1ZXMvTkwvI3RlYW1zX3RlYW1fd2luczMwMDBcIlxuU2V0T2ZUYWJsZXMgPC0gd2ViX3BhZ2UgJT4lXG4gIHJlYWRfaHRtbCgpICU+JVxuICBodG1sX25vZGVzKGNzcyA9IFwidGFibGVcIikgJT4lXG4gIGh0bWxfdGFibGUoZmlsbCA9IFRSVUUpXG5cbk5MV2luc2FuZExvc3NlcyA8LSBTZXRPZlRhYmxlc1tbMV1dXG5gYGAifQ== -->
+<pre class="r"><code>web_page &lt;- &quot;https://www.baseball-reference.com/leagues/NL/#teams_team_wins3000&quot;
 SetOfTables &lt;- web_page %&gt;%
   read_html() %&gt;%
   html_nodes(css = &quot;table&quot;) %&gt;%
@@ -274,6 +312,50 @@ SetOfTables &lt;- web_page %&gt;%
 
 NLWinsandLosses &lt;- SetOfTables[[1]]</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGVhZChTYWxhcmllcylcbmBgYCJ9 -->
+<pre class="r"><code>head(Salaries)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6NiwibmNvbCI6NSwic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyI2IHggNSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUJwMVNQVTdETUJSMjBpU2xrVm9RWEFDSkJTRTFva1V3VThGWUlRUU0zZEJMWXRwUXg2a2NWOUN0QitBT2lOc3djZ1JtanNEUVlDZDJtMlJDOVpEM3ZTL2YrN1h2cmtkbjdzaEZDRFdRWlJpb1lRdUluS3ZiWHYrOGo1QmxDczlBRm1wSit5cFVCd0pJVFVmS0x0OHRLVWYvdGVMc3lUaVZzREY0R0c0THE1bk1tK0VXcUpxajVRT2JZb0pQZTJzQ2h5eEplWm1nT1BUWm10Z0pJSjZ4YUNNSU1FdG9oWmhBN0FjVFFhaVZEVTdldnVVZUJvZWZ5bjU4NWZiby9xZXcrNFYvL0t3MlZya0RtMEtNVTlXNXJVaHJnWUVwM09RWTRzY28xQTBRRE9NNUxoRXpBZ3ZNTm9TVEFnRzJxTlZwc2VURjA3WGFjbDlMOGNteTdMZmVVRUFnMVExcDBnMkJnL2ZFUkx6d1ZyV1FaakxqVVVKRmtLbGZVem5ZWURWaWQwNWxKMkUzbU16cHRIc2hDK1MvaTlOVzJDbGh1eWhwWnJWTk9aaU9JNHAxN3dSOFRKVFRFUlBuQTN2aVJpblhrd2cyOVhqQ1FldmNJQ0dheVdkRHF6OFY0ZWdmUlFNQUFBPT0ifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["team_id"],"name":[2],"type":["chr"],"align":["left"]},{"label":["league_id"],"name":[3],"type":["chr"],"align":["left"]},{"label":["player_id"],"name":[4],"type":["chr"],"align":["left"]},{"label":["salary"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"1985","2":"ATL","3":"NL","4":"barkele01","5":"870000"},{"1":"1985","2":"ATL","3":"NL","4":"bedrost01","5":"550000"},{"1":"1985","2":"ATL","3":"NL","4":"benedbr01","5":"545000"},{"1":"1985","2":"ATL","3":"NL","4":"campri01","5":"633333"},{"1":"1985","2":"ATL","3":"NL","4":"ceronri01","5":"625000"},{"1":"1985","2":"ATL","3":"NL","4":"chambch01","5":"800000"}],"options":{"columns":{"min":{},"max":[10],"total":[5]},"rows":{"min":[10],"max":[10],"total":[6]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGVhZChOTFdpbnNhbmRMb3NzZXMpXG5gYGAifQ== -->
+<pre class="r"><code>head(NLWinsandLosses)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6NiwibmNvbCI6MTgsInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiNiB4IDE4Il19fSwicmRmIjoiSDRzSUFBQUFBQUFBQm8xVjMwL2JNQkIyMHgrSVNMQ3ArenVvRXJ1Sms4ZXFGV3NsS0JVRkRSNnpFclpxWFlMU0lIams3K2FCemltNU84OE9FcFhhZkxIdnZydjc3dXhlVG02RWUrTXl4dHFzMDJxeGRsZEIxaHN2ZkI1d3hqcU9lbXV4RGp1c25zL0s2cHNDZmZYOVdwblZHeDN1Y1YvREhtRS8xbkNrWWFuaDBPQnIreUd2b1JONjlxS0NvbkdWRzBST2dEdzhBQlFSd3QxWVlMelk1SWdnYlVlZ1p5d1JRWDZPcEp3amswUDZ5REZFWGtReDhWSXhuckFTd1NRRjBrbDBEYVVXL3VORU1DZ1A3ZVJpUkpIVUl2elB3VDc5Tkx2cVljaWhhRmpVaXg5cUtSa2xVS0VrUTBERm8waVNTckI2U29yekdFdEdGR05LRVlsa3RZUDRlWk05UmZjMFVjMlcwbnhpMHlKcUFucUdlck5NUGRBZUQxczF4VllFR2hWcGp3WGFpNGE4dzRaUnNVWkxOVTNhb21veTBCRWJmaXdJSFNlQlNKdEtFZ25aSXZQMmNFSnFMczJXc0FYUkRuRmdYSFhkTFBtYmJtdmlQbHhWdDJsU3dGMzRIY29lWGM0UVhwMEJIRS9IQ0dkemhCZG9NTDI0Qm5nMm1nQThuNDBJb3UzODloemdZb3JSRnJNcmdNdkpBdUVwWnJha2RINHM1MGFGaDBYK05JQXFqeW9SWHRUUGJyZDdOYVZZYlpJdFNBR0w3bDFTSm9QN1F2bXJ0emZENVNCL0tOZDVwcHljNnUraWF6aTNDbVBoeTJOV1pYSjNzdnI5bVAwNXFTNGNkNy85L2ptcWNVL0QvZmVRenE2bTZ0WlV2VFQ3dGM1U3lIMlQvRXczOWN1eHFuaGY4T0NoV0djbFZLSld0NE15THhPd2MxZjVCbGIydGJHM2Y1bmlsWHNtQndBQSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Year"],"name":[1],"type":["chr"],"align":["left"]},{"label":["G"],"name":[2],"type":["chr"],"align":["left"]},{"label":["ARI"],"name":[3],"type":["chr"],"align":["left"]},{"label":["ATL"],"name":[4],"type":["chr"],"align":["left"]},{"label":["CHC"],"name":[5],"type":["chr"],"align":["left"]},{"label":["CIN"],"name":[6],"type":["chr"],"align":["left"]},{"label":["COL"],"name":[7],"type":["chr"],"align":["left"]},{"label":["HOU"],"name":[8],"type":["chr"],"align":["left"]},{"label":["LAD"],"name":[9],"type":["chr"],"align":["left"]},{"label":["MIA"],"name":[10],"type":["chr"],"align":["left"]},{"label":["MIL"],"name":[11],"type":["chr"],"align":["left"]},{"label":["NYM"],"name":[12],"type":["chr"],"align":["left"]},{"label":["PHI"],"name":[13],"type":["chr"],"align":["left"]},{"label":["PIT"],"name":[14],"type":["chr"],"align":["left"]},{"label":["SDP"],"name":[15],"type":["chr"],"align":["left"]},{"label":["SFG"],"name":[16],"type":["chr"],"align":["left"]},{"label":["STL"],"name":[17],"type":["chr"],"align":["left"]},{"label":["WSN"],"name":[18],"type":["chr"],"align":["left"]}],"data":[{"1":"2021","2":"162","3":"52","4":"88","5":"71","6":"83","7":"74","8":"","9":"106","10":"67","11":"95","12":"77","13":"82","14":"61","15":"79","16":"107","17":"90","18":"65"},{"1":"2020","2":"60","3":"25","4":"35","5":"34","6":"31","7":"26","8":"","9":"43","10":"31","11":"29","12":"26","13":"28","14":"19","15":"37","16":"29","17":"30","18":"26"},{"1":"2019","2":"162","3":"85","4":"97","5":"84","6":"75","7":"71","8":"","9":"106","10":"57","11":"89","12":"86","13":"81","14":"69","15":"70","16":"77","17":"91","18":"93"},{"1":"2018","2":"163","3":"82","4":"90","5":"95","6":"67","7":"91","8":"","9":"92","10":"63","11":"96","12":"77","13":"80","14":"82","15":"66","16":"73","17":"88","18":"82"},{"1":"2017","2":"162","3":"93","4":"72","5":"92","6":"68","7":"87","8":"","9":"104","10":"77","11":"86","12":"70","13":"66","14":"75","15":"71","16":"64","17":"83","18":"97"},{"1":"2016","2":"162","3":"69","4":"68","5":"103","6":"68","7":"75","8":"","9":"91","10":"79","11":"73","12":"87","13":"71","14":"78","15":"68","16":"87","17":"86","18":"95"}],"options":{"columns":{"min":{},"max":[10],"total":[18]},"rows":{"min":[10],"max":[10],"total":[6]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShTYWxhcmllcylcbmBgYCJ9 -->
+<pre class="r"><code>summary(Salaries)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgeWVhciAgICAgICAgdGVhbV9pZCAgICAgICAgICAgbGVhZ3VlX2lkICAgICAgICAgIHBsYXllcl9pZCAgICAgICAgICAgICBzYWxhcnkgICAgICAgIFxuIE1pbi4gICA6MTk4NSAgIExlbmd0aDoyNTU3NSAgICAgICBMZW5ndGg6MjU1NzUgICAgICAgTGVuZ3RoOjI1NTc1ICAgICAgIE1pbi4gICA6ICAgICAgIDAgIFxuIDFzdCBRdS46MTk5MyAgIENsYXNzIDpjaGFyYWN0ZXIgICBDbGFzcyA6Y2hhcmFjdGVyICAgQ2xhc3MgOmNoYXJhY3RlciAgIDFzdCBRdS46ICAyNzUwMDAgIFxuIE1lZGlhbiA6MjAwMCAgIE1vZGUgIDpjaGFyYWN0ZXIgICBNb2RlICA6Y2hhcmFjdGVyICAgTW9kZSAgOmNoYXJhY3RlciAgIE1lZGlhbiA6ICA1NTAwMDAgIFxuIE1lYW4gICA6MjAwMCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIE1lYW4gICA6IDIwMDg1NjMgIFxuIDNyZCBRdS46MjAwOCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDNyZCBRdS46IDIyNTAwMDAgIFxuIE1heC4gICA6MjAxNSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIE1heC4gICA6MzMwMDAwMDAgIFxuIn0= -->
+<pre><code>      year        team_id           league_id          player_id             salary        
+ Min.   :1985   Length:25575       Length:25575       Length:25575       Min.   :       0  
+ 1st Qu.:1993   Class :character   Class :character   Class :character   1st Qu.:  275000  
+ Median :2000   Mode  :character   Mode  :character   Mode  :character   Median :  550000  
+ Mean   :2000                                                            Mean   : 2008563  
+ 3rd Qu.:2008                                                            3rd Qu.: 2250000  
+ Max.   :2015                                                            Max.   :33000000  </code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
@@ -320,7 +402,7 @@ pivot_longer(cols = c(ARI, ATL, CHC, CIN, COL, HOU, LAD, MIA, MIL, NYM, PHI, PIT
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkZpbmFsIFByb2plY3QgUmVwb3J0Ig0KYXV0aG9yOiAiSHVudGVyIEZyaXN0aWNrIg0KZGF0ZTogIkR1ZTogMTIvMTUvMjAyMSINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KLS0tDQoNCiMgU2V0IFVwDQoNCiMjIyBDbGVhbiB1cCBlbnZpcm9ubWVudCBhbmQgbG9hZCBwYWNrYWdlcw0KYGBge3J9DQojIGNsZWFuIHVwIHRoZSBSU3R1ZGlvIGVudmlyb25tZW50IA0Kcm0obGlzdCA9IGxzKCkpDQoNCiMgbG9hZCBhbGwgcGFja2FnZXMgaGVyZTogDQpsaWJyYXJ5KG1vc2FpYykNCmxpYnJhcnkodGlkeXIpDQoNCmBgYA0KDQojIyMgTG9hZGluZyB0aGUgRGF0YQ0KDQpgYGB7cn0NClNhbGFyaWVzIDwtIHJlYWRyOjpyZWFkX2NzdignQzpcXFVzZXJzXFxmcmlzdFxcT25lRHJpdmVcXERvY3VtZW50c1xcUGVubiBTdGF0ZVxcU1RBVCAxODRcXEdpdGh1YiBSZXBvc2l0b3J5XFxmaW5hbC1wcm9qZWN0LXJlcG9ydC1mcmlzdGlja1xcc2FsYXJ5LmNzdicpDQpgYGANCg0KDQpgYGB7cn0NCmxpYnJhcnkocnZlc3QpDQp3ZWJfcGFnZSA8LSAiaHR0cHM6Ly93d3cuYmFzZWJhbGwtcmVmZXJlbmNlLmNvbS9sZWFndWVzL05MLyN0ZWFtc190ZWFtX3dpbnMzMDAwIg0KU2V0T2ZUYWJsZXMgPC0gd2ViX3BhZ2UgJT4lDQogIHJlYWRfaHRtbCgpICU+JQ0KICBodG1sX25vZGVzKGNzcyA9ICJ0YWJsZSIpICU+JQ0KICBodG1sX3RhYmxlKGZpbGwgPSBUUlVFKQ0KDQpOTFdpbnNhbmRMb3NzZXMgPC0gU2V0T2ZUYWJsZXNbWzFdXQ0KYGBgDQoNCmBgYHtyfQ0KSGlnaGVzdFdpbnNieVllYXIgPC0NCiAgTkxXaW5zYW5kTG9zc2VzICU+JQ0KICBncm91cF9ieShZZWFyKQ0KICANCiAgDQpIaWdoZXN0V2luc2J5WWVhcg0KYGBgDQpgYGB7cn0NCkhpZ2hlc3RXaW5zYnlZZWFyICU+JQ0KICBwaXZvdF93aWRlcihuYW1lc19mcm9tID0gWWVhciwgdmFsdWVzX2Zyb20gPSBNSUEpDQpgYGANCg0KYGBge3J9DQpIaWdoZXN0V2luc2J5WWVhciAlPiUNCnBpdm90X2xvbmdlcihjb2xzID0gYyhBUkksIEFUTCwgQ0hDLCBDSU4sIENPTCwgSE9VLCBMQUQsIE1JQSwgTUlMLCBOWU0sIFBISSwgUElULCBTRFAsIFNGRywgU1RMLCBXU04pLCBuYW1lc190byA9ICJUZWFtIiwgdmFsdWVzX3RvID0gIldpbnMiKQ0KYGBgDQoNCg==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkZpbmFsIFByb2plY3QgUmVwb3J0Ig0KYXV0aG9yOiAiSHVudGVyIEZyaXN0aWNrIg0KZGF0ZTogIkR1ZTogMTIvMTUvMjAyMSINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KLS0tDQoNCiMgU2V0IFVwDQoNCiMjIyBDbGVhbiB1cCBlbnZpcm9ubWVudCBhbmQgbG9hZCBwYWNrYWdlcw0KYGBge3J9DQojIGNsZWFuIHVwIHRoZSBSU3R1ZGlvIGVudmlyb25tZW50IA0Kcm0obGlzdCA9IGxzKCkpDQoNCiMgbG9hZCBhbGwgcGFja2FnZXMgaGVyZTogDQpsaWJyYXJ5KG1vc2FpYykNCmxpYnJhcnkodGlkeXIpDQpsaWJyYXJ5KHJ2ZXN0KQ0KDQpgYGANCg0KIyMjIERhdGEgQWNjZXNzDQoNCmBgYHtyfQ0KU2FsYXJpZXMgPC0gcmVhZHI6OnJlYWRfY3N2KCdDOlxcVXNlcnNcXGZyaXN0XFxPbmVEcml2ZVxcRG9jdW1lbnRzXFxQZW5uIFN0YXRlXFxTVEFUIDE4NFxcR2l0aHViIFJlcG9zaXRvcnlcXGZpbmFsLXByb2plY3QtcmVwb3J0LWZyaXN0aWNrXFxzYWxhcnkuY3N2JykNCmBgYA0KDQpgYGB7cn0NCndlYl9wYWdlIDwtICJodHRwczovL3d3dy5iYXNlYmFsbC1yZWZlcmVuY2UuY29tL2xlYWd1ZXMvTkwvI3RlYW1zX3RlYW1fd2luczMwMDAiDQpTZXRPZlRhYmxlcyA8LSB3ZWJfcGFnZSAlPiUNCiAgcmVhZF9odG1sKCkgJT4lDQogIGh0bWxfbm9kZXMoY3NzID0gInRhYmxlIikgJT4lDQogIGh0bWxfdGFibGUoZmlsbCA9IFRSVUUpDQoNCk5MV2luc2FuZExvc3NlcyA8LSBTZXRPZlRhYmxlc1tbMV1dDQpgYGANCg0KDQoNCmBgYHtyfQ0KaGVhZChTYWxhcmllcykNCmBgYA0KDQoNCmBgYHtyfQ0KaGVhZChOTFdpbnNhbmRMb3NzZXMpDQpgYGANCg0KDQpgYGB7cn0NCnN1bW1hcnkoU2FsYXJpZXMpDQpgYGANCg0KDQoNCmBgYHtyfQ0KSGlnaGVzdFdpbnNieVllYXIgPC0NCiAgTkxXaW5zYW5kTG9zc2VzICU+JQ0KICBncm91cF9ieShZZWFyKQ0KICANCiAgDQpIaWdoZXN0V2luc2J5WWVhcg0KYGBgDQpgYGB7cn0NCkhpZ2hlc3RXaW5zYnlZZWFyICU+JQ0KICBwaXZvdF93aWRlcihuYW1lc19mcm9tID0gWWVhciwgdmFsdWVzX2Zyb20gPSBNSUEpDQpgYGANCg0KYGBge3J9DQpIaWdoZXN0V2luc2J5WWVhciAlPiUNCnBpdm90X2xvbmdlcihjb2xzID0gYyhBUkksIEFUTCwgQ0hDLCBDSU4sIENPTCwgSE9VLCBMQUQsIE1JQSwgTUlMLCBOWU0sIFBISSwgUElULCBTRFAsIFNGRywgU1RMLCBXU04pLCBuYW1lc190byA9ICJUZWFtIiwgdmFsdWVzX3RvID0gIldpbnMiKQ0KYGBgDQoNCg==</div>
 
 
 

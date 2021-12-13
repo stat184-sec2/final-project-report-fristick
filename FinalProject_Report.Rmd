@@ -15,18 +15,17 @@ rm(list = ls())
 # load all packages here: 
 library(mosaic)
 library(tidyr)
+library(rvest)
 
 ```
 
-### Loading the Data
+### Data Access
 
 ```{r}
 Salaries <- readr::read_csv('C:\\Users\\frist\\OneDrive\\Documents\\Penn State\\STAT 184\\Github Repository\\final-project-report-fristick\\salary.csv')
 ```
 
-
 ```{r}
-library(rvest)
 web_page <- "https://www.baseball-reference.com/leagues/NL/#teams_team_wins3000"
 SetOfTables <- web_page %>%
   read_html() %>%
@@ -35,6 +34,24 @@ SetOfTables <- web_page %>%
 
 NLWinsandLosses <- SetOfTables[[1]]
 ```
+
+
+
+```{r}
+head(Salaries)
+```
+
+
+```{r}
+head(NLWinsandLosses)
+```
+
+
+```{r}
+summary(Salaries)
+```
+
+
 
 ```{r}
 HighestWinsbyYear <-
