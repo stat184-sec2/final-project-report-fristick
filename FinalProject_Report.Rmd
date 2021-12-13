@@ -35,7 +35,15 @@ SetOfTables <- web_page %>%
 NLWinsandLosses <- SetOfTables[[1]]
 ```
 
+```{r}
+web_pageAL <- "https://www.baseball-reference.com/leagues/AL/#teams_team_wins3000"
+SetOfTables <- web_pageAL %>%
+  read_html() %>%
+  html_nodes(css = "table") %>%
+  html_table(fill = TRUE)
 
+ALWinsandLosses <- SetOfTables[[1]]
+```
 
 ```{r}
 head(Salaries)
@@ -46,28 +54,38 @@ head(Salaries)
 head(NLWinsandLosses)
 ```
 
+```{r}
+summary(ALWinsandLosses)
+```
 
 ```{r}
 summary(Salaries)
+```
+
+### Data Wrangling / Cleaning
+
+
+```{r}
+ NLWinsLonger <-
+    NLWinsandLosses %>%
+    pivot_longer(cols = c(ARI, ATL, CHC, CIN, COL, HOU, LAD, MIA, MIL, NYM, PHI, PIT, SDP, SFG, STL, WSN), names_to = "Team", values_to = "Wins")
+
+ALWinsLonger <-
+    ALWinsandLosses %>%
+    pivot_longer(cols = c(BAL, BLA, BOS, CHW, CLE, DET, HOU, KCR, LAA, MIL, MIN, NYY, OAK, SEA, TBR, TEX, TOR), names_to = "Team", values_to = "Wins")
+
+WinsLonger <- rbind(NLWinsLonger, ALWinsLonger)
 ```
 
 
 
 ```{r}
 HighestWinsbyYear <-
-  NLWinsandLosses %>%
-  group_by(Year)
+  WinsLonger %>%
+  group_by(Year) %>%
+  filter(Year >= 1985 & Year != 'Year') %>%
+  summarise(MostWins = max(Wins), Team)
   
   
 HighestWinsbyYear
 ```
-```{r}
-HighestWinsbyYear %>%
-  pivot_wider(names_from = Year, values_from = MIA)
-```
-
-```{r}
-HighestWinsbyYear %>%
-pivot_longer(cols = c(ARI, ATL, CHC, CIN, COL, HOU, LAD, MIA, MIL, NYM, PHI, PIT, SDP, SFG, STL, WSN), names_to = "Team", values_to = "Wins")
-```
-
