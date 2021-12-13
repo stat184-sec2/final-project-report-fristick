@@ -22,7 +22,7 @@ library(rvest)
 ### Data Access
 
 ```{r}
-Salaries <- readr::read_csv('C:\\Users\\frist\\OneDrive\\Documents\\Penn State\\STAT 184\\Github Repository\\final-project-report-fristick\\salary.csv')
+Salaries <- readr::read_csv('C:\\Users\\frist\\OneDrive\\Documents\\Penn State\\STAT 184\\Github Repository\\final-project-report-fristick\\Salaries.csv')
 ```
 
 ```{r}
@@ -82,13 +82,25 @@ WinsLonger <- rbind(NLWinsLonger, ALWinsLonger)
 HighestWinsbyYear <-
   WinsLonger %>%
   group_by(Year) %>%
-  filter(Year >= 1985 & Year != 'Year') %>%
+  filter(Year >= 1985 & Year <= 2016 & Year != 'Year') %>%
   summarise(MostWins = max(Wins), Team)
   
 HighestWinsbyYear
 ```
 ```{r}
-head(Salaries)
+SalSum <-
+  Salaries %>%
+  group_by(yearID = as.character(yearID), teamID) %>%
+  summarise(totalSal = sum(salary))
+SalSum
+```
+
+```{r}
+JoinedData <-
+  SalSum %>%
+  inner_join(WinsLonger, by = c("yearID" = "Year", "teamID" = "Team"))
+
+JoinedData
 ```
 
 
