@@ -103,6 +103,7 @@ SalSum
 JoinedData <-
   SalSum %>%
   inner_join(WinsLonger, by = c("yearID" = "Year", "teamID" = "Team")) %>%
+  group_by(yearID = as.double(yearID)) %>%
   na_if('') %>%
   drop_na()
 
@@ -111,9 +112,12 @@ JoinedData
 In this query I am join the SalSum data with the WinsLonger data.  This will allow me to analyze the salaries based on how many wins each team has throughout the years. I joined the data based on matching year and team name data and I used an inner join to ensure that only the data that matched was selected so that I didn't have N/A values in my new table.
 
 ```{r}
-JoinedData %>%
-  group_by(yearID) %>%
+AvgSal <-
+  JoinedData %>%
+   group_by(yearID = as.double(yearID)) %>%
   summarise(avgSal = mean(totalSal))
+
+AvgSal
 ```
 This query shows the average salary of all teams for each year in the data from 1985 to 2016.
 
@@ -131,10 +135,17 @@ This query uses a regular expression to to grab all of the years in the data who
 ### Data Visualization
 
 ```{r}
-
-SalSum %>%
-  ggplot(aes(x = yearID, y = totalSal)) +
+JoinedData %>%
+  ggplot(aes(x = yearID, y = totalSal, color = teamID)) +
   geom_point() +
-  ylab('Total Team Salaries')
+  ylab('Team Salaries')
 ```
+This graphic shows the team salaries based on the year.  Each color represents a different team on the graphic. For example, the team with the highest salary overall is the green dot in the upper right corner. From looking at this image, you can see that salaries have increased overtime. This is because as baseball has gotten more popular, more money has been put into the sport. What this also shows is as the years go on, there is a larger difference between the smallest and largest salary.
+
+```{r}
+JoinedData %>%
+  ggplot(aes(x = yearID, y = totalSal, color = teamID)) +
+  geom_density() +
+```
+
 
