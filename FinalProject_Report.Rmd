@@ -132,6 +132,17 @@ Total90s
 
 This query uses a regular expression to to grab all of the years in the data who are included in the 90s. this is done by filter the data to only include years with a 9 in the third place.  I then summaries how many cases there were for each year of data.
 
+```{r}
+JoinedData %>%
+  group_by(yearID) %>%
+  mutate(x = max(totalSal) - min(totalSal)) %>%
+  summarise(yearID, x) %>%
+  unique() %>%
+  filter(yearID == 1985 | yearID == 2016)
+ 
+```
+This query shows how the total difference in salaries per team has increased over the years.  In 1985 there was 10,194,000 between the highest and lowest salary and in 2016 there was 135,896,481. So as time has increased, the gap between the lowest and highest salary has increased tremendously.
+
 ### Data Visualization
 
 ```{r}
@@ -144,8 +155,8 @@ This graphic shows the team salaries based on the year.  Each color represents a
 
 ```{r}
 JoinedData %>%
-  ggplot(aes(x = yearID, y = totalSal, color = teamID)) +
-  geom_density() +
+  ggplot(aes(x = totalSal, color = Wins)) +
+  geom_density() 
 ```
 
 
