@@ -18,6 +18,9 @@ library(tidyr)
 library(rvest)
 
 ```
+### Research Question
+  
+
 
 ### Data Access
 
@@ -75,7 +78,7 @@ ALWinsLonger <-
 WinsLonger <- rbind(NLWinsLonger, ALWinsLonger)
 ```
 
-
+In this step I am pivoting both NLWinsandLosses ALWinsandLosses into a narrow form.  Then I am binding both tables together so that I can use them as one table.  I need to pivot them to make the data easier to use and graph later on in the project.
 
 ```{r}
 HighestWinsbyYear <-
@@ -105,9 +108,33 @@ JoinedData <-
 
 JoinedData
 ```
+In this query I am join the SalSum data with the WinsLonger data.  This will allow me to analyze the salaries based on how many wins each team has throughout the years. I joined the data based on matching year and team name data and I used an inner join to ensure that only the data that matched was selected so that I didn't have N/A values in my new table.
 
+```{r}
+JoinedData %>%
+  group_by(yearID) %>%
+  summarise(avgSal = mean(totalSal))
+```
+This query shows the average salary of all teams for each year in the data from 1985 to 2016.
+
+```{r}
+Total90s <-
+  JoinedData %>%
+  filter(grepl('..9.', yearID, ignore.case = TRUE)) %>%
+  summarise(count = n())
+
+Total90s
+```
+
+This query uses a regular expression to to grab all of the years in the data who are included in the 90s. this is done by filter the data to only include years with a 9 in the third place.  I then summaries how many cases there were for each year of data.
 
 ### Data Visualization
 
+```{r}
 
+SalSum %>%
+  ggplot(aes(x = yearID, y = totalSal)) +
+  geom_point() +
+  ylab('Total Team Salaries')
+```
 
