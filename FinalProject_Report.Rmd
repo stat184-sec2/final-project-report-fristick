@@ -71,8 +71,7 @@ summary(Salaries)
 
 ALWinsLonger <-
     ALWinsandLosses %>%
-    pivot_longer(cols = c(BAL, BLA, BOS, CHW, CLE, DET, HOU, KCR, LAA, MIL, MIN, NYY, OAK, SEA, TBR, TEX, TOR), names_to = "Team", values_to = "Wins")
-
+    pivot_longer(cols = c(BAL, BLA, BOS, CHW, CLE, DET, HOU, KCR, LAA, MIL, MIN, NYY, OAK, SEA, TBR, TEX, TOR), names_to = "Team", values_to = "Wins") 
 WinsLonger <- rbind(NLWinsLonger, ALWinsLonger)
 ```
 
@@ -84,6 +83,7 @@ HighestWinsbyYear <-
   group_by(Year) %>%
   filter(Year >= 1985 & Year <= 2016 & Year != 'Year') %>%
   summarise(MostWins = max(Wins), Team)
+
   
 HighestWinsbyYear
 ```
@@ -91,19 +91,23 @@ HighestWinsbyYear
 SalSum <-
   Salaries %>%
   group_by(yearID = as.character(yearID), teamID) %>%
-  summarise(totalSal = sum(salary))
+  summarise(totalSal = sum(salary)) 
+
 SalSum
 ```
 
 ```{r}
 JoinedData <-
   SalSum %>%
-  inner_join(WinsLonger, by = c("yearID" = "Year", "teamID" = "Team"))
+  inner_join(WinsLonger, by = c("yearID" = "Year", "teamID" = "Team")) %>%
+  na_if('') %>%
+  drop_na()
 
 JoinedData
 ```
 
 
 ### Data Visualization
+
 
 
