@@ -154,17 +154,20 @@ This query shows how the total difference in salaries per team has increased ove
 ### Data Visualization
 
 ```{r}
-JoinedData %>%
-  ggplot(aes(x = yearID, y = totalSal, color = teamID)) +
-  geom_point() +
+JoinedDataAvg <-
+  ggplot() +
+  geom_point(data = JoinedData, aes(x = yearID, y = totalSal, color = teamID)) +
+  geom_line(data = AvgSal, aes(x = yearID, y = avgSal)) +
   ylab('Team Salaries')
+
+JoinedDataAvg
 ```
-This graphic shows the team salaries based on the year.  Each color represents a different team on the graphic. For example, the team with the highest salary overall is the green dot in the upper right corner. From looking at this image, you can see that salaries have increased overtime. This is because as baseball has gotten more popular, more money has been put into the sport. What this also shows is as the years go on, there is a larger difference between the smallest and largest salary.
+This graphic shows the team salaries based on the year. The line on the graph is the avg salary for each team by year. Each color represents a different team on the graphic. For example, the team with the highest salary overall is the green dot in the upper right corner. From looking at this image, you can see that salaries have increased overtime. This is because as baseball has gotten more popular, more money has been put into the sport. What this also shows is as the years go on, there is a larger difference between the smallest and largest salary. 
 
 ```{r}
 DifinHighLow %>%
   ggplot(aes(x = WinDifference, y = SalDifference, color = yearID)) +
   geom_path()
 ```
-This graphic shows that as the difference in salay increases, the difference from most to least wins fluctuates.  The point where salary difference appears to have the most impact is at around a $65 mil difference.  After that the difference in wins appears to come back toward the average. The highest difference in wins appears to happen at around A $22 mil difference.
+This graphic shows that as the difference in salary increases, the difference from most to least wins fluctuates.  The point where salary difference appears to have the most impact is at around a $65 mil difference.  After that the difference in wins appears to come back toward the average. The highest difference in wins appears to happen at around A $22 mil difference.
 
