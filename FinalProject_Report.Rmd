@@ -96,7 +96,7 @@ SalSum <-
 
 SalSum
 ```
-In this query I am grouping the salaries by year and the team.  Then I am summing the salaries so that I have a yearly total for each team overall. this allows me to able to compared each team to others by how much they pay out in salaries per year. For example, in 1985, ATL paid out more in salaries than BOS did.
+In this query I am grouping the salaries by year and the team. Then I am summing the salaries so that I have a yearly total for each team overall. This allows me to able to compare each team to each other by how much they pay out in salaries per year. For example, in 1985, ATL paid out more in salaries than BOS did.
 
 ```{r}
 JoinedData <-
@@ -109,7 +109,7 @@ JoinedData <-
 
 JoinedData
 ```
-In this query I am joining the SalSum data with the WinsLonger data.  This will allow me to analyze the salaries based on how many wins each team has throughout the years. I joined the data based on matching year and team name and I used an inner join to ensure that only the data that matched was selected. Since some teams switch from NL to Al in later years, I had to remove any repeated N/A values where they no longer had any data in one of the data. This cleaned up the data set so that every case has a number to go with it.
+In this query I am joining the SalSum data with the WinsLonger data.  This will allow me to analyze the salaries based on how many wins each team has throughout the years. I joined the data based on matching year and team name and I used an inner join to ensure that only the data that matched was selected. Since some teams switch from NL to Al in later years, I had to remove any repeated N/A values where they no longer had any data in one of the tables. This cleaned up the data set so that every case has a number to go with it.
 
 ```{r}
 AvgSal <-
@@ -119,18 +119,18 @@ AvgSal <-
 
 AvgSal
 ```
-This query shows the average salary of all teams for each year in the data from 1985 to 2016.
+This query shows the average salary of all teams combined for each year in the data from 1985 to 2016. I grouped the data by year and took the mean of it to get the table above. As the years go on, you can see that the average salary increased which is probably because of baseball becoming more popular, as well as inflation.
 
 ```{r}
 Total90s <-
   JoinedData %>%
-  filter(grepl('..9.', yearID, ignore.case = TRUE)) %>%
-  summarise(count = n())
+  filter(grepl('..0.', yearID, ignore.case = TRUE)) %>%
+  summarise(avgWins = mean(Wins), GamesPlayed = G)
 
 Total90s
 ```
 
-This query uses a regular expression to to grab all of the years in the data who are included in the 90s. this is done by filter the data to only include years with a 9 in the third place.  I then summaries how many cases there were for each year of data.
+This query uses a regular expression to to grab all of the years in the data who are included in the 2000s. This is done by filtering the data to only include years with a 0 in the third place.  I then summarized the average amount of Wins for each year. The Avg amount of Wins stayed between 79 and 82 while the amount of Games Played did not change and stayed at 162.
 
 ```{r}
 DifinHighLow <-
@@ -147,7 +147,7 @@ TwoYears <-
 
 TwoYears
 ```
-This query shows how the total difference in salaries per team has increased over the years. In 1985 there was $10,194,000 difference between the highest and lowest salary and in 2016 there was $135,896,481. So as the years increase, the gap between the lowest and highest salary has increased tremendously. The difference in highest and lowest wins however, went down which is interesting to see.
+This query shows how the total difference in salaries per team has increased over the years. In 1985 there was $10,194,000 difference between the highest and lowest salary and in 2016 there was $135,896,481. So as the years increase, the gap between the lowest and highest salary has increased tremendously. The difference in highest and lowest wins however, went down, which is interesting to see.
 
 ### Data Visualization
 
@@ -161,7 +161,7 @@ JoinedDataAvg <-
 
 JoinedDataAvg
 ```
-This graphic shows the team salaries based on the year. The line on the graph is the avg salary for each team by year. Each color represents a different team on the graphic. For example, the team with the highest salary overall is the green dot in the upper right corner. From looking at this image, you can see that salaries have increased overtime. This is because as baseball has gotten more popular, more money has been put into the sport. What this also shows is as the years go on, there is a larger difference between the smallest and largest salary. 
+This graphic shows the team salaries based on the year. The line on the graph is the avg salary for each team by year each color represents a different team on the graphic. For example, the team with the highest salary overall is the green dot in the upper right corner. From looking at this image, you can see that salaries have increased overtime. This is because as baseball has gotten more popular, more money has been put into the sport. What this also shows is as the years go on, there is a larger difference between the smallest and largest salary. In the first few years the teams spent around the same amount on salaries, but in 2016 there is a large difference in how much each team spent. 
 
 ```{r}
 DifinHighLow %>%
@@ -169,5 +169,8 @@ DifinHighLow %>%
   geom_path() +
   ggtitle('Salary Difference vs. Win Difference')
 ```
-This graphic shows that as the difference in salary increases, the difference from most to least wins fluctuates.  The point where salary difference appears to have the most impact is at around a $65 mil difference.  After that the difference in wins appears to come back toward the average. The highest difference in wins appears to happen at around A $22 mil difference.
+This graphic shows that as the difference in salary increases, the difference from most to least wins fluctuates. The point where salary difference appears to have the most impact is at around a $65 mil difference.  After that the difference in wins appears to come back toward the average. The highest difference in wins appears to happen at around A $22 mil difference.
 
+### Conclusion
+
+In conclusion, the amount of money spent on salary does not seem to affect the amount of wins a team gets. It seemed to have more of an effect from the 90s to 2000s. After that, the increase in salaries is not affecting the amount of wins a team gets since the difference from most to least wins stays around the same numbers. The salary increase must be affected by another outside source not related to wins, like inflation or the sport becoming popular. These factors could not be measured from this data that I used. One significant challenge I had while using this data set was trying to figure how to pivot the NL and AL data set to make it easy to run queries on. After looking in the textbook, I was eventually able to figure it out which helped tremendously with my analysis.
