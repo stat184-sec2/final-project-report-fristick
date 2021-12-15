@@ -1,7 +1,7 @@
 ---
 title: 'Final Project Checklist'
-author: "AUTHOR NAME(S)"
-date: "Due: DATE"
+author: "Hunter Fristick)"
+date: "Due: 12/15/2021"
 output: html_notebook
 ---
 
@@ -24,34 +24,34 @@ output: html_notebook
 
 *Description: (1) Analysis includes at least two different data sources. (2) Primary data source may NOT be loaded from an R package--though supporting data may. (3) Access to all data sources is contained within the analysis. (4) Imported data is inspected at beginning of analysis using one or more R functions: e.g., str, glimpse, head, tail, names, nrow, etc*
 
-(A) .Rmd Line numbers where at least two different data sources are imported:  
+(A) .Rmd Line numbers where at least two different data sources are imported: 28, 34, 44 
 
 
-(B) .Rmd Line numbers for inspecting data intake:  
+(B) .Rmd Line numbers for inspecting data intake: 56, 61, 67, 72
 
 
 ### Data Wrangling / Cleaning / ect (5 out of 7 required)
 
 
-(A) .Rmd Line number(s) for general data wrangling: 
+(A) .Rmd Line number(s) for general data wrangling: 81,85,95, 105, 118, 138
 
 
-(B) .Rmd Line number(s) for a join operation: 
+(B) .Rmd Line number(s) for a join operation: 104
 
 
-(C) .Rmd Line number(s) for a pivot_wider or pivot_longer operation (or equivalent):
+(C) .Rmd Line number(s) for a pivot_wider or pivot_longer operation (or equivalent): 81,85
 
 
-(D) .Rmd Line number(s) for use of regular expressions: 
+(D) .Rmd Line number(s) for use of regular expressions: 127
 
 
-(E) .Rmd Line number(s) for use of reduction and/or transformation functions: 
+(E) .Rmd Line number(s) for use of reduction and/or transformation functions: 95, 118, 128
 
 
-(F) .Rmd Line number(s) for use of user-defined functions: 
+(F) .Rmd Line number(s) for use of user-defined functions: N/A
 
 
-(G) .Rmd Line number(s) for use of loops and/or control flow: 
+(G) .Rmd Line number(s) for use of loops and/or control flow: N/A
 
 
 
@@ -60,15 +60,15 @@ output: html_notebook
 ### Data Visualization (3 of 5 required)
 
 
-(A) .Rmd Line numbers for use of multiple different geoms:  
+(A) .Rmd Line numbers for use of multiple different geoms: 157, 158, 169 
 
-(B) .Rmd Line number(s) for use of multiple aesthetics:  
+(B) .Rmd Line number(s) for use of multiple aesthetics:  157, 158, 159, 168, 170
 
-(C) .Rmd Line number(s) for use of layered graphics:  
+(C) .Rmd Line number(s) for use of layered graphics: 157, 158
 
-(D) .Rmd Line number(s) for use of leaflet or choropleth maps:  
+(D) .Rmd Line number(s) for use of leaflet or choropleth maps:  N/A
 
-(E) .Rmd Line number(s) for use of decision tree or dendogram results:    
+(E) .Rmd Line number(s) for use of decision tree or dendogram results:  N/A 
 
 
 
