@@ -22,12 +22,13 @@ library(rvest)
 
 Does the total amount of money paid in salaries for each MLB team relate to the amount of wins a team has?
 
-
 ### Data Access
 
 ```{r}
 Salaries <- readr::read_csv('C:\\Users\\frist\\OneDrive\\Documents\\Penn State\\STAT 184\\Github Repository\\final-project-report-fristick\\Salaries.csv')
 ```
+The data is from: (http://www.seanlahman.com/baseball-archive/statistics).  This data set  contains all of the MLB baseball statistics since 1871. It is from the Lahman’s Baseball Database. The data was collected by Ted Turocy so that we can better understand baseball statistics and is updated yearly.
+Key variables: year, teamID, playerID, lgID, salary
 
 ```{r}
 web_page <- "https://www.baseball-reference.com/leagues/NL/#teams_team_wins3000"
@@ -48,23 +49,29 @@ SetOfTables <- web_pageAL %>%
 
 ALWinsandLosses <- SetOfTables[[1]]
 ```
+The second and third data set is from: (https://www.baseball-reference.com/leagues/NL/) and (https://www.baseball-reference.com/leagues/AL/). They  contains the wins and losses for team for each year since 1901. It was provided by Pete Palmer and Gary Gillette of Hidden Game Sports yearly.
+Key variables: Year, G, each teams' wins
 
 ```{r}
 head(Salaries)
 ```
-
+This shows the first 6 cases in the Salaries data set.
 
 ```{r}
 head(NLWinsandLosses)
 ```
+This shows the first 6 cases in the NL Wins and Loses data set.
+
 
 ```{r}
 summary(ALWinsandLosses)
 ```
+This is a summary of the AL Wins and Losses and all of the data is a character class.
 
 ```{r}
 summary(Salaries)
 ```
+This shows a summary of the Salaries and the mean salary for a player is $2,085,634 per year.
 
 ### Data Wrangling / Cleaning
 
@@ -79,7 +86,7 @@ ALWinsLonger <-
 WinsLonger <- rbind(NLWinsLonger, ALWinsLonger)
 ```
 
-In this step I am pivoting both NLWinsandLosses ALWinsandLosses into a narrow form.  Then I am binding both tables together so that I can use them as one table.  I need to pivot them to make the data easier to use and graph later on in the project.
+In this step I am pivoting both NLWinsandLosses and ALWinsandLosses into a narrow form.  Then I am binding both tables together so that I can use them as one table.  I need to pivot them to make the data easier to use and graph later on in the project.
 
 ```{r}
 SalSum <-
@@ -89,6 +96,7 @@ SalSum <-
 
 SalSum
 ```
+In this query I am grouping the salaries by year and the team.  Then I am summing the salaries so that I have a yearly total for each team overall. this allows me to able to compared each team to others by how much they pay out in salaries per year. For example, in 1985, ATL paid out more in salaries than BOS did.
 
 ```{r}
 JoinedData <-
@@ -101,17 +109,7 @@ JoinedData <-
 
 JoinedData
 ```
-In this query I am joining the SalSum data with the WinsLonger data.  This will allow me to analyze the salaries based on how many wins each team has throughout the years. I joined the data based on matching year and team name data and I used an inner join to ensure that only the data that matched was selected so that I didn't have N/A values in my new table.
-
-```{r}
-HighestWinsbyYear <-
-  JoinedData %>%
-  group_by(yearID) %>%
-  summarise(MostWins = max(Wins), teamID, totalSal)
-
-  
-HighestWinsbyYear
-```
+In this query I am joining the SalSum data with the WinsLonger data.  This will allow me to analyze the salaries based on how many wins each team has throughout the years. I joined the data based on matching year and team name and I used an inner join to ensure that only the data that matched was selected. Since some teams switch from NL to Al in later years, I had to remove any repeated N/A values where they no longer had any data in one of the data. This cleaned up the data set so that every case has a number to go with it.
 
 ```{r}
 AvgSal <-
@@ -158,7 +156,8 @@ JoinedDataAvg <-
   ggplot() +
   geom_point(data = JoinedData, aes(x = yearID, y = totalSal, color = teamID)) +
   geom_line(data = AvgSal, aes(x = yearID, y = avgSal)) +
-  ylab('Team Salaries')
+  ylab('Team Salaries') +
+  ggtitle('Team Salaries by Year')
 
 JoinedDataAvg
 ```
@@ -167,7 +166,8 @@ This graphic shows the team salaries based on the year. The line on the graph is
 ```{r}
 DifinHighLow %>%
   ggplot(aes(x = WinDifference, y = SalDifference, color = yearID)) +
-  geom_path()
+  geom_path() +
+  ggtitle('Salary Difference vs. Win Difference')
 ```
 This graphic shows that as the difference in salary increases, the difference from most to least wins fluctuates.  The point where salary difference appears to have the most impact is at around a $65 mil difference.  After that the difference in wins appears to come back toward the average. The highest difference in wins appears to happen at around A $22 mil difference.
 
