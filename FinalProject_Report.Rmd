@@ -18,6 +18,7 @@ library(tidyr)
 library(rvest)
 
 ```
+
 ### Research Question
 
 Does the total amount of money paid in salaries for each MLB team relate to the amount of wins a team has?
@@ -25,7 +26,8 @@ Does the total amount of money paid in salaries for each MLB team relate to the 
 ### Data Access
 
 ```{r}
-Salaries <- readr::read_csv('C:\\Users\\frist\\OneDrive\\Documents\\Penn State\\STAT 184\\Github Repository\\final-project-report-fristick\\Salaries.csv')
+github <- "https://raw.githubusercontent.com/stat184-sec2/final-project-report-fristick/main/Salaries.csv?token=AQS7LSBC7E7CNUXFFJI3AR3BXKJJK"
+Salaries <- readr::read_csv(github)
 ```
 The data is from: (http://www.seanlahman.com/baseball-archive/statistics).  This data set  contains all of the MLB baseball statistics since 1871. It is from the Lahman’s Baseball Database. The data was collected by Ted Turocy so that we can better understand baseball statistics and is updated yearly.
 Key variables: year, teamID, playerID, lgID, salary
